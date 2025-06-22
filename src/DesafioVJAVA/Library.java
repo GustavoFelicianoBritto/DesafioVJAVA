@@ -71,7 +71,66 @@ public class Library {
 		
 	}
 	
+	public static void ContaDelivery()
+	{
+		/*
+			Prato 1 = R$ 10,00
+			Prato 2 = R$ 13,00
+			Taxa fixa de entrega = R$ 7,00
+		 */
+		Scanner input = new Scanner(System.in);
+		
+		
+		double prato1=10.00,prato2=13.00,entrega=7.00;
+		int option,contIndex=0,qtd;
+		double pedido[]= new double[5],total=0;
+		
+		
+		do {
+		System.out.print("Qual prato você deseja comprar?\n1 - Prato 1 = R$ 10,00\n2 - Prato 2 = R$ 13,00\n0 - Finalizar compras ");	
+		option = input.nextInt();
+		
+		switch (option)
+		{
+		case 1:
+			System.out.printf("Digite a quantidade do prato 1: ");
+			qtd=input.nextInt();
+			pedido[contIndex]=prato1*qtd;
+			contIndex+=1;
+			break;
+		case 2:
+			System.out.printf("Digite a quantidade do prato 2: ");
+			qtd=input.nextInt();
+			pedido[contIndex]=prato2*qtd;
+			contIndex+=1;
+			break;
+		case 0:
+			System.out.println("Finalizando compras");
+			break;
+		default:
+			System.out.println("Opção inválida");
+			break;
+		}
+
+		}while(option!=0);
+		
+		for (int i=0;i<pedido.length;i++)
+		{
+			//System.out.print(pedido[i]>0?pedido[i]+" ":" ");
+			total+=pedido[i];	
+		}
+		
+		total += entrega;
+		
+		for (int j=0;j<pedido.length;j++)
+		{
+			System.out.println(pedido[j]>0?pedido[j]+" ":" ");
+		}
+		System.out.printf("\nEntrega: %.2f",entrega);
+		System.out.println("\n------------");
+		System.out.printf(total>7?"Total com entrega: "+total+"":"Carrinho vazio");
 	
+	}
 	
 	
 	
@@ -99,7 +158,7 @@ public class Library {
 		do
 		{
 		System.out.println("\n\nQual opção? \n0 - Sair\n1 - Horas viagem\n2 - Área Retângulo\n"
-				+ "3 - Converter hora em minutos/segundos");
+				+ "3 - Converter hora em minutos/segundos\n4 - Pedido delivery");
 		option=input.nextInt();
 		
 		switch (option)
@@ -115,6 +174,9 @@ public class Library {
 			break;
 		case 3:
 			HorasMinutosSegundos();
+			break;
+		case 4:
+			ContaDelivery();
 			break;
 		default:
 			System.out.println("Opção inválida");
