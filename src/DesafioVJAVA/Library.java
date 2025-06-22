@@ -38,6 +38,57 @@ public class Library {
 		
 	}
 
+	public static void HorasMinutosSegundos()
+	{
+		Scanner input = new Scanner(System.in);
+		String horaS, minutoS,horarioString;
+		int horaInt,minutoInt,minutos,segundos;
+		boolean VintequatroH;
+		
+		System.out.println("Digite a hora: ");
+		horarioString = input.next();
+		
+		horaS = horarioString.substring(0, horarioString.indexOf(":"));
+		minutoS= horarioString.substring(horarioString.indexOf(":")+1);
+		
+		horaInt = Integer.parseInt(horaS);
+		minutoInt = Integer.parseInt(minutoS);
+		
+
+		if(horaInt<12)
+		{	
+			System.out.printf("Você quis dizer: %d:%d? S - Sim, N- Não: ",horaInt+12,minutoInt);
+			String resp=input.next().toLowerCase();
+			
+			if(resp.equals("s")){horaInt+=12;}
+		};
+		
+		
+		minutos= (horaInt*60)+minutoInt;
+		segundos = minutos*60;
+		
+		System.out.printf("%d:%d contém %d minutos e %d segundos",horaInt,minutoInt,minutos,segundos);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	public static void Basic()
@@ -47,7 +98,8 @@ public class Library {
 		
 		do
 		{
-		System.out.println("\n\nQual opção? \n0 - Sair\n1 - Horas viagem\n2 - Área Retângulo\n");
+		System.out.println("\n\nQual opção? \n0 - Sair\n1 - Horas viagem\n2 - Área Retângulo\n"
+				+ "3 - Converter hora em minutos/segundos");
 		option=input.nextInt();
 		
 		switch (option)
@@ -60,6 +112,9 @@ public class Library {
 			break;
 		case 2:
 			AreaRetangulo();
+			break;
+		case 3:
+			HorasMinutosSegundos();
 			break;
 		default:
 			System.out.println("Opção inválida");
