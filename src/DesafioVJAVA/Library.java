@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Library {
 
 	
+	//======================================
 	
 	public static void HorasViagem()
 	{
@@ -132,7 +133,56 @@ public class Library {
 	
 	}
 	
+	//======================================
 	
+	public static void JurosAtraso()
+	{
+
+		Scanner input = new Scanner (System.in);
+		
+		int dias, respJuros;
+		double  parcela, juros, total;
+		
+		System.out.println("Qual valor inicial da parcela? ");
+		parcela=input.nextDouble();
+		
+		System.out.println("Quantos dias está atrasada? ");
+		dias=input.nextInt();
+		
+		System.out.println("Qual porcentagem de juros por dia? ");
+		respJuros=input.nextInt();
+		
+		if(respJuros==1) {juros = 5.0;}
+		else if(respJuros==2) {juros=10.0;}
+		else 
+		{
+			System.out.println("Opção inválida, juros mais alto selecionado");
+			juros=10.0;
+		}
+		
+		total = parcela+((parcela*dias)*juros)/100;
+		
+		System.out.println(total);
+			
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//======================================
+	//======================================
 	
 	
 	
@@ -187,22 +237,144 @@ public class Library {
 		while(option!=0);
 	}
 	
+	
 	public static void Decision()
 	{
+		Scanner input = new Scanner(System.in);
+		int option;
+		
+		do
+		{
+			System.out.println("\n\nQual opção? \n0 - Sair");
+			option=input.nextInt();
+			
+			switch (option)
+			{
+			case 0:
+				System.out.println("Voltando para menu principal");
+				break;
+			case 1:			
+				break;
+			case 2:			
+				break;
+			case 3:			
+				break;
+			case 4:
+				break;
+			default:
+				System.out.println("Opção inválida");
+				break;
+			}
+			
+		}
+		while(option!=0);
+	
+		
 		
 	}
 	
 	public static void Repetition()
 	{
 		
+		Scanner input = new Scanner(System.in);
+		int option;
+		
+		do
+		{
+			System.out.println("\n\nQual opção? \n0 - Sair");
+			option=input.nextInt();
+			
+			switch (option)
+			{
+			case 0:
+				System.out.println("Voltando para menu principal");
+				break;
+			case 1:			
+				break;
+			case 2:			
+				break;
+			case 3:			
+				break;
+			case 4:
+				break;
+			default:
+				System.out.println("Opção inválida");
+				break;
+			}
+			
+		}
+		while(option!=0);
+	
+		
+		
 	}
 	
 	public static void Math()
 	{
+		Scanner input = new Scanner(System.in);
+		int option;
+		
+		do
+		{
+			System.out.println("\n\nQual opção? \n0 - Sair");
+			option=input.nextInt();
+			
+			switch (option)
+			{
+			case 0:
+				System.out.println("Voltando para menu principal");
+				break;
+			case 1:			
+				break;
+			case 2:			
+				break;
+			case 3:			
+				break;
+			case 4:
+				break;
+			default:
+				System.out.println("Opção inválida");
+				break;
+			}
+			
+		}
+		while(option!=0);
+	
+		
 		
 	}
 	public static void Vector()
 	{
+		Scanner input = new Scanner(System.in);
+		int option;
+		
+		do
+		{
+			System.out.println("\n\nQual opção? \n0 - Sair");
+			option=input.nextInt();
+			
+			switch (option)
+			{
+			case 0:
+				System.out.println("Voltando para menu principal");
+				break;
+			case 1:			
+				break;
+			case 2:			
+				break;
+			case 3:			
+				break;
+			case 4:
+				break;
+			default:
+				System.out.println("Opção inválida");
+				break;
+			}
+			
+		}
+		while(option!=0);
+	
+		
 		
 	}
 	
