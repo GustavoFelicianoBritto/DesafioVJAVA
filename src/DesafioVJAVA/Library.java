@@ -141,7 +141,7 @@ public class Library {
 		Scanner input = new Scanner (System.in);
 		
 		int dias, respJuros;
-		double  parcela, juros, total;
+		double  parcela, juros;
 		
 		System.out.println("Qual valor inicial da parcela? ");
 		parcela=input.nextDouble();
@@ -161,14 +161,13 @@ public class Library {
 			juros=10.0;
 		}
 		
-		
 		for(int i=0;i<dias;i++)
 		{
 			parcela= parcela+((parcela*juros)/100);
 		}
 		
 		System.out.printf("Valor inicial: %.2f\nDias em atraso: %d dias"
-				+ "\nJuros por dia: %.2f\ntotal a pagar: %.2f",parcelainicial,dias,juros, parcela);
+				+ "\nJuros por dia: %.1f %%\ntotal a pagar: %.2f",parcelainicial,dias,juros, parcela);
 			
 
 	}
