@@ -172,7 +172,36 @@ public class Library {
 
 	}
 	
+	public static void DiaUtil()
+	{
 	
+		Scanner input = new Scanner(System.in);
+		String semana[]= {"1- Domingo","2- Segunda","3- Terça","4- Quarta","5- Quinta",
+				"6- Sexta","7- Sábado"};
+		
+		System.out.println("Digite o número para verificar (1 - 7): ");
+		for(int i=0;i<semana.length;i++) {System.out.println(semana[i]);}
+		
+		int num = input.nextInt();
+		
+		switch(num)
+			{
+				case 2,3,4,5,6:
+					System.out.println(semana[num-1]+" feira Dia útil");
+					break;
+				case 1,7:
+					System.out.println(semana[num-1]+" final de semana");
+					break;
+				default:
+					System.out.println("Opção inválida");
+					break;
+			}
+		
+	}
+		
+		
+		
+		
 	
 	
 	
@@ -250,7 +279,7 @@ public class Library {
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários");
+			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil");
 			option=input.nextInt();
 			
 			switch (option)
@@ -261,7 +290,8 @@ public class Library {
 			case 1:
 				JurosAtraso();
 				break;
-			case 2:			
+			case 2:		
+				DiaUtil();
 				break;
 			case 3:			
 				break;

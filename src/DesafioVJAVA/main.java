@@ -6,7 +6,7 @@ public class main {
 		
 		//Library.Basic();
 		Library.Decision();
-		//Library.JurosAtraso();
+		
 		
 		
 		
