@@ -271,22 +271,41 @@ public class Library {
 		
 	}
 		
-		
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	//======================================
+	
+	
+	
+	public static void NumerosPares()
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int contPar=0,contImpar=0;
+		int numbers[]= new int[6];
+		
+		for(int i=0;i<6;i++)
+		{
+			System.out.printf("Digite o %dº número: ",i+1);
+			numbers[i]= input.nextInt();
+			
+			if(numbers[i]%2==0){contPar++;}
+			else {contImpar++;}
+		}
+		
+		for(int j=0;j<numbers.length;j++) {System.out.println(numbers[j]%2==0?numbers[j]+" par":numbers[j]+" impar");}
+		System.out.println(contPar>contImpar?"Mais números pares foram inseridos":contImpar>contPar?"Mais números impares foram inseridos":"Mesma quantidade de números pares e impares inseridos");
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//======================================
 	
 	

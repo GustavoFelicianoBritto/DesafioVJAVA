@@ -5,8 +5,8 @@ public class main {
 	public static void main(String[] args) {
 		
 		//Library.Basic();
-		Library.Decision();
-		
+		//Library.Decision();
+		Library.NumerosPares();
 		
 		
 		
