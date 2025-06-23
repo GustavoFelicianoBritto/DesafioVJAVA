@@ -1,5 +1,6 @@
 package DesafioVJAVA;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Library {
 
@@ -242,6 +243,33 @@ public class Library {
 	
 	
 	}
+	
+	public static void viagem()
+	{
+		//Estado da estrada (liberada/bloqueada) baseado na temperatura.
+		Scanner input = new Scanner(System.in);
+		
+		int selectorTemp, randomday;
+		String StatusEstrada[]= {"liberada","bloqueada"};
+		Random selector = new Random();
+		
+		randomday= selector.nextInt(1,31);
+		
+		System.out.printf("Dia de viagem %d\n",randomday);
+		System.out.println("...\n...\n...");
+		
+		selectorTemp= selector.nextInt(-20,20);
+
+		System.out.printf("Temperatura atual: %dº graus",selectorTemp);
+		System.out.println();
+		System.out.println(selectorTemp>7?"Viagem "+StatusEstrada[0]+"!!!":"Viagem "+StatusEstrada[1]+"!!!");
+
+		//System.out.println("\nAperte enter para ir para o próximo dia...");
+		
+		//input.next();
+
+		
+	}
 		
 		
 		
@@ -323,7 +351,7 @@ public class Library {
 		do
 		{
 			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil"
-					+ "\n3 - Eleição simples");
+					+ "\n3 - Eleição simples\n4 - Viagem (Temperatura)");
 			option=input.nextInt();
 			
 			switch (option)
@@ -341,6 +369,7 @@ public class Library {
 				eleicao();
 				break;
 			case 4:
+				viagem();
 				break;
 			default:
 				System.out.println("Opção inválida");
