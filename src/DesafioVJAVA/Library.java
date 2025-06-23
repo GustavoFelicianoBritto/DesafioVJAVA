@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Library {
 
 	
-	//======================================
+	//======================================basico
 	
 	public static void HorasViagem()
 	{
@@ -133,7 +133,7 @@ public class Library {
 	
 	}
 	
-	//======================================
+	//======================================decisão
 	
 	public static void JurosAtraso()
 	{
@@ -199,6 +199,49 @@ public class Library {
 		
 	}
 		
+	public static void eleicao()
+	{
+		Scanner input = new Scanner(System.in);
+	
+		String candidatos[]=new String[3];
+		int votos[]=new int [3];
+		
+		
+		for (int i=0;i<candidatos.length;i++)
+		{
+			System.out.printf("Digite o nome do %d candidato: ",i+1);
+			candidatos[i]=input.next();
+			
+			System.out.printf("Digite a quantidade total de votos em %s: ",candidatos[i]);
+			votos[i]=input.nextInt();
+			System.out.println();
+
+		}
+		
+		if(votos[0]>(votos[1]+votos[2]))
+		{
+			System.out.println(candidatos[0]+" é o vencedor com "+votos[0]+" votos");
+		}
+		else if(votos[1]>(votos[2]+votos[0]))
+		{
+			System.out.println(candidatos[1]+" é o vencedor com "+votos[1]+" votos");
+		}
+		else if(votos[2]>(votos[1]+votos[0]))
+		{
+			System.out.println(candidatos[2]+" é o vencedor com "+votos[2]+" votos");
+		}
+		else
+		{
+			System.out.println("Dados inconclusivos: ");
+			for(int j=0;j<candidatos.length;j++)
+			{
+				System.out.println(candidatos[j]+": "+votos[j]+" votos");
+			}
+		}
+	
+	
+	
+	}
 		
 		
 		
@@ -279,7 +322,8 @@ public class Library {
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil");
+			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil"
+					+ "\n3 - Eleição simples");
 			option=input.nextInt();
 			
 			switch (option)
@@ -293,7 +337,8 @@ public class Library {
 			case 2:		
 				DiaUtil();
 				break;
-			case 3:			
+			case 3:	
+				eleicao();
 				break;
 			case 4:
 				break;
