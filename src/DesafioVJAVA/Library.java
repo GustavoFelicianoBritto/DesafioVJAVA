@@ -145,11 +145,12 @@ public class Library {
 		
 		System.out.println("Qual valor inicial da parcela? ");
 		parcela=input.nextDouble();
-		
+		double parcelainicial=parcela;
+	
 		System.out.println("Quantos dias está atrasada? ");
 		dias=input.nextInt();
 		
-		System.out.println("Qual porcentagem de juros por dia? ");
+		System.out.println("Qual porcentagem de juros por dia? \n1- 5%\n2- 10% ");
 		respJuros=input.nextInt();
 		
 		if(respJuros==1) {juros = 5.0;}
@@ -160,9 +161,14 @@ public class Library {
 			juros=10.0;
 		}
 		
-		total = parcela+((parcela*dias)*juros)/100;
 		
-		System.out.println(total);
+		for(int i=0;i<dias;i++)
+		{
+			parcela= parcela+((parcela*juros)/100);
+		}
+		
+		System.out.printf("Valor inicial: %.2f\nDias em atraso: %d dias"
+				+ "\nJuros por dia: %.2f\ntotal a pagar: %.2f",parcelainicial,dias,juros, parcela);
 			
 
 	}
@@ -245,7 +251,7 @@ public class Library {
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair");
+			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários");
 			option=input.nextInt();
 			
 			switch (option)
@@ -253,7 +259,8 @@ public class Library {
 			case 0:
 				System.out.println("Voltando para menu principal");
 				break;
-			case 1:			
+			case 1:
+				JurosAtraso();
 				break;
 			case 2:			
 				break;

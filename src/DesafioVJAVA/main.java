@@ -5,8 +5,8 @@ public class main {
 	public static void main(String[] args) {
 		
 		//Library.Basic();
-		
-		Library.JurosAtraso();
+		Library.Decision();
+		//Library.JurosAtraso();
 		
 		
 		
