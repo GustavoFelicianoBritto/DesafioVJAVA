@@ -7,31 +7,31 @@ public class Library {
 	
 	//======================================basico
 	
-	public static void HorasViagem()
+	public static void HorasViagem(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int dias, horas,total;
 		
 		System.out.print("Digite quantos dias você viajou: ");
-		dias = input.nextInt();
+		dias = inputMain.nextInt();
 		System.out.print("Digite quantas horas extras você viajou: (0 = nenhuma hora extra) ");
-		horas = input.nextInt();
+		horas = inputMain.nextInt();
 		total = (dias *24)+horas;
 		
 		System.out.printf(horas<=0?"Você viajou por "+ dias +" dias, ou seja, "+ total +" horas.":"Você viajou por "+ dias +" dias e "+ horas+" horas, ou seja, "+ total +" horas.");
 		
 	}
 	
-	public static void AreaRetangulo()
+	public static void AreaRetangulo(Scanner inputMain)
 	{
 		//Receber base e altura de um retângulo e mostrar a área.
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		double base,altura,area;
 		
 		System.out.println("Digite a base do retângulo: ");
-		base = input.nextDouble();
+		base = inputMain.nextDouble();
 		System.out.println("Digite a altura do retângulo: ");
-		altura = input.nextDouble();
+		altura = inputMain.nextDouble();
 		
 		area = base*altura;
 		
@@ -40,15 +40,15 @@ public class Library {
 		
 	}
 
-	public static void HorasMinutosSegundos()
+	public static void HorasMinutosSegundos(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		String horaS, minutoS,horarioString;
 		int horaInt,minutoInt,minutos,segundos;
-		boolean VintequatroH;
+		//boolean VintequatroH;
 		
 		System.out.println("Digite a hora: ");
-		horarioString = input.next();
+		horarioString = inputMain.next();
 		
 		horaS = horarioString.substring(0, horarioString.indexOf(":"));
 		minutoS= horarioString.substring(horarioString.indexOf(":")+1);
@@ -60,7 +60,7 @@ public class Library {
 		if(horaInt<12)
 		{	
 			System.out.printf("Você quis dizer: %d:%d? S - Sim, N- Não: ",horaInt+12,minutoInt);
-			String resp=input.next().toLowerCase();
+			String resp=inputMain.next().toLowerCase();
 			
 			if(resp.equals("s")){horaInt+=12;}
 		};
@@ -73,16 +73,10 @@ public class Library {
 		
 	}
 	
-	public static void ContaDelivery()
+	public static void ContaDelivery(Scanner inputMain)
 	{
-		/*
-			Prato 1 = R$ 10,00
-			Prato 2 = R$ 13,00
-			Taxa fixa de entrega = R$ 7,00
-		 */
-		Scanner input = new Scanner(System.in);
-		
-		
+		//Scanner input = new Scanner(System.in);
+
 		double prato1=10.00,prato2=13.00,entrega=7.00;
 		int option,contIndex=0,qtd;
 		double pedido[]= new double[5],total=0;
@@ -90,19 +84,19 @@ public class Library {
 		
 		do {
 		System.out.print("Qual prato você deseja comprar?\n1 - Prato 1 = R$ 10,00\n2 - Prato 2 = R$ 13,00\n0 - Finalizar compras ");	
-		option = input.nextInt();
+		option = inputMain.nextInt();
 		
 		switch (option)
 		{
 		case 1:
 			System.out.printf("Digite a quantidade do prato 1: ");
-			qtd=input.nextInt();
+			qtd=inputMain.nextInt();
 			pedido[contIndex]=prato1*qtd;
 			contIndex+=1;
 			break;
 		case 2:
 			System.out.printf("Digite a quantidade do prato 2: ");
-			qtd=input.nextInt();
+			qtd=inputMain.nextInt();
 			pedido[contIndex]=prato2*qtd;
 			contIndex+=1;
 			break;
@@ -136,23 +130,23 @@ public class Library {
 	
 	//======================================decisão
 	
-	public static void JurosAtraso()
+	public static void JurosAtraso(Scanner inputMain)
 	{
 
-		Scanner input = new Scanner (System.in);
+		//Scanner input = new Scanner (System.in);
 		
 		int dias, respJuros;
 		double  parcela, juros;
 		
 		System.out.println("Qual valor inicial da parcela? ");
-		parcela=input.nextDouble();
+		parcela=inputMain.nextDouble();
 		double parcelainicial=parcela;
 	
 		System.out.println("Quantos dias está atrasada? ");
-		dias=input.nextInt();
+		dias=inputMain.nextInt();
 		
 		System.out.println("Qual porcentagem de juros por dia? \n1- 5%\n2- 10% ");
-		respJuros=input.nextInt();
+		respJuros=inputMain.nextInt();
 		
 		if(respJuros==1) {juros = 5.0;}
 		else if(respJuros==2) {juros=10.0;}
@@ -173,17 +167,17 @@ public class Library {
 
 	}
 	
-	public static void DiaUtil()
+	public static void DiaUtil(Scanner inputMain)
 	{
 	
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		String semana[]= {"1- Domingo","2- Segunda","3- Terça","4- Quarta","5- Quinta",
 				"6- Sexta","7- Sábado"};
 		
 		System.out.println("Digite o número para verificar (1 - 7): ");
 		for(int i=0;i<semana.length;i++) {System.out.println(semana[i]);}
 		
-		int num = input.nextInt();
+		int num = inputMain.nextInt();
 		
 		switch(num)
 			{
@@ -200,9 +194,9 @@ public class Library {
 		
 	}
 		
-	public static void eleicao()
+	public static void eleicao(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 	
 		String candidatos[]=new String[3];
 		int votos[]=new int [3];
@@ -211,10 +205,10 @@ public class Library {
 		for (int i=0;i<candidatos.length;i++)
 		{
 			System.out.printf("Digite o nome do %d candidato: ",i+1);
-			candidatos[i]=input.next();
+			candidatos[i]=inputMain.next();
 			
 			System.out.printf("Digite a quantidade total de votos em %s: ",candidatos[i]);
-			votos[i]=input.nextInt();
+			votos[i]=inputMain.nextInt();
 			System.out.println();
 
 		}
@@ -247,7 +241,6 @@ public class Library {
 	public static void viagem()
 	{
 		//Estado da estrada (liberada/bloqueada) baseado na temperatura.
-		Scanner input = new Scanner(System.in);
 		
 		int selectorTemp, randomday;
 		String StatusEstrada[]= {"liberada","bloqueada"};
@@ -276,9 +269,9 @@ public class Library {
 	
 	
 	
-	public static void NumerosPares()
+	public static void NumerosPares(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		
 		int contPar=0,contImpar=0;
 		int numbers[]= new int[6];
@@ -286,7 +279,7 @@ public class Library {
 		for(int i=0;i<6;i++)
 		{
 			System.out.printf("Digite o %dº número: ",i+1);
-			numbers[i]= input.nextInt();
+			numbers[i]= inputMain.nextInt();
 			
 			if(numbers[i]%2==0){contPar++;}
 			else {contImpar++;}
@@ -298,24 +291,11 @@ public class Library {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	//======================================
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
@@ -324,16 +304,16 @@ public class Library {
 	
 	
 
-	public static void Basic()
+	public static void Basic(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
 		System.out.println("\n\nQual opção? \n0 - Sair\n1 - Horas viagem\n2 - Área Retângulo\n"
 				+ "3 - Converter hora em minutos/segundos\n4 - Pedido delivery");
-		option=input.nextInt();
+		option=inputMain.nextInt();
 		
 		switch (option)
 		{
@@ -341,16 +321,16 @@ public class Library {
 			System.out.println("Voltando para menu principal");
 			break;
 		case 1:
-			HorasViagem();
+			HorasViagem(inputMain);
 			break;
 		case 2:
-			AreaRetangulo();
+			AreaRetangulo(inputMain);
 			break;
 		case 3:
-			HorasMinutosSegundos();
+			HorasMinutosSegundos(inputMain);
 			break;
 		case 4:
-			ContaDelivery();
+			ContaDelivery(inputMain);
 			break;
 		default:
 			System.out.println("Opção inválida");
@@ -362,16 +342,16 @@ public class Library {
 	}
 	
 	
-	public static void Decision()
+	public static void Decision(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
 			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil"
 					+ "\n3 - Eleição simples\n4 - Viagem (Temperatura)");
-			option=input.nextInt();
+			option=inputMain.nextInt();
 			
 			switch (option)
 			{
@@ -379,13 +359,13 @@ public class Library {
 				System.out.println("Voltando para menu principal");
 				break;
 			case 1:
-				JurosAtraso();
+				JurosAtraso(inputMain);
 				break;
 			case 2:		
-				DiaUtil();
+				DiaUtil(inputMain);
 				break;
 			case 3:	
-				eleicao();
+				eleicao(inputMain);
 				break;
 			case 4:
 				viagem();
@@ -402,16 +382,16 @@ public class Library {
 		
 	}
 	
-	public static void Repetition()
+	public static void Repetition(Scanner inputMain)
 	{
 		
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
 			System.out.println("\n\nQual opção? \n0 - Sair");
-			option=input.nextInt();
+			option=inputMain.nextInt();
 			
 			switch (option)
 			{
@@ -438,15 +418,15 @@ public class Library {
 		
 	}
 	
-	public static void Math()
+	public static void Math(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
 			System.out.println("\n\nQual opção? \n0 - Sair");
-			option=input.nextInt();
+			option=inputMain.nextInt();
 			
 			switch (option)
 			{
@@ -472,15 +452,15 @@ public class Library {
 		
 		
 	}
-	public static void Vector()
+	public static void Vector(Scanner inputMain)
 	{
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
 			System.out.println("\n\nQual opção? \n0 - Sair");
-			option=input.nextInt();
+			option=inputMain.nextInt();
 			
 			switch (option)
 			{
