@@ -6,13 +6,8 @@ public class main {
 	public static void main(String[] args) {
 		
 	Scanner inputMain = new Scanner(System.in);
-	
-	
-		Library.Basic(inputMain);
-		//Library.Decision(inputMain);
-		//Library.NumerosPares(inputMain);
 		
-		
+		Library.MainMenu(inputMain);
 		
 		
 		inputMain.close();

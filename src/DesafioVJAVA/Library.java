@@ -1,8 +1,11 @@
 package DesafioVJAVA;
 import java.util.Scanner;
+
+
 import java.util.Random;
 
-public class Library {
+public class Library
+{
 
 	
 	//======================================basico
@@ -263,7 +266,8 @@ public class Library {
 
 		
 	}
-		
+	
+	//======================================repetição
 
 	//======================================
 	
@@ -292,7 +296,7 @@ public class Library {
 	}
 	
 
-	//======================================
+	
 	
 	
 
@@ -390,7 +394,7 @@ public class Library {
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair");
+			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Numeros pares");
 			option=inputMain.nextInt();
 			
 			switch (option)
@@ -398,7 +402,8 @@ public class Library {
 			case 0:
 				System.out.println("Voltando para menu principal");
 				break;
-			case 1:			
+			case 1:	
+				NumerosPares(inputMain);
 				break;
 			case 2:			
 				break;
@@ -492,16 +497,64 @@ public class Library {
 	
 	
 	
+
+	//************************************
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+	public static void MainMenu(Scanner inputMain)
+		{
+			int option;
+			
+			do
+			{
+				System.out.println("Bem vindo ao menu principal");
+				System.out.println("0- Sair\n1- Básico\n2- Decisão"
+						+ "\n3- Repetição\n4- Matemática\n5- Vetores");
+				option=inputMain.nextInt();
+				
+				switch (option)
+				{
+				case 0:
+					System.out.println("Saindo...");
+					break;
+				case 1:	
+					Basic(inputMain);
+					break;
+				case 2:
+					Decision(inputMain);
+					break;
+				case 3:			
+					Repetition(inputMain);
+					break;
+				case 4:
+					Math(inputMain);
+					break;
+				case 5:
+					Vector(inputMain);
+					break;
+				default:
+					System.out.println("Opção inválida");
+					break;
+				}
+				
+			}
+			while(option!=0);
+		
+			
+			
+			
+		}
 	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
