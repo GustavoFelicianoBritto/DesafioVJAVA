@@ -329,12 +329,13 @@ public class Library
 	//=================SUB MENU =====================
 	public static void Basic(Scanner inputMain)
 	{
-		clearConsoleWindows();
+		
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
+		
 		System.out.println("\nQual opção? \n0 - Menu\n1 - Horas viagem\n2 - Área Retângulo\n"
 				+ "3 - Converter hora em minutos/segundos\n4 - Pedido delivery");
 		option=inputMain.nextInt();
@@ -367,12 +368,13 @@ public class Library
 	
 	public static void Decision(Scanner inputMain)
 	{
-		clearConsoleWindows();
+		
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
+			
 			System.out.println("\nQual opção? \n0 - Menu\n1 - Juros diários\n2 - Dia útil"
 					+ "\n3 - Eleição simples\n4 - Viagem (Temperatura)");
 			option=inputMain.nextInt();
@@ -408,13 +410,13 @@ public class Library
 	
 	public static void Repetition(Scanner inputMain)
 	{
-		clearConsoleWindows();
 		
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
+			
 			System.out.println("\nQual opção? \n0 - Menu\n1 - Numeros pares");
 			option=inputMain.nextInt();
 			
@@ -446,12 +448,12 @@ public class Library
 	
 	public static void Math(Scanner inputMain)
 	{
-		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
+			
 			System.out.println("\nQual opção? \n0 - Menu");
 			option=inputMain.nextInt();
 			
@@ -481,12 +483,12 @@ public class Library
 	}
 	public static void Vector(Scanner inputMain)
 	{
-		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
+			
 			System.out.println("\nQual opção? \n0 - Sair");
 			option=inputMain.nextInt();
 			
@@ -537,18 +539,23 @@ public class Library
 					System.out.println("Saindo...");
 					break;
 				case 1:	
+					clearConsoleWindows();
 					Basic(inputMain);
 					break;
 				case 2:
+					clearConsoleWindows();
 					Decision(inputMain);
 					break;
-				case 3:			
+				case 3:	
+					clearConsoleWindows();
 					Repetition(inputMain);
 					break;
 				case 4:
+					clearConsoleWindows();
 					Math(inputMain);
 					break;
 				case 5:
+					clearConsoleWindows();
 					Vector(inputMain);
 					break;
 				default:
