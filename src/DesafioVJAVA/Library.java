@@ -6,12 +6,23 @@ import java.util.Random;
 
 public class Library
 {
-
+	public static void clearConsoleWindows() {
+	    try {
+	        // Cria um ProcessBuilder para executar o comando 'cmd /c cls'
+	        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	    } catch (final Exception e) {
+	        // Lida com qualquer exceção que possa ocorrer (por exemplo, se o comando não for encontrado)
+	        System.out.println("Erro ao limpar o console (Windows): " + e.getMessage());
+	    }
+	}
+	
+	
 	
 	//======================================basico
 	
 	public static void HorasViagem(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int dias, horas,total;
 		
@@ -21,12 +32,13 @@ public class Library
 		horas = inputMain.nextInt();
 		total = (dias *24)+horas;
 		
-		System.out.printf(horas<=0?"Você viajou por "+ dias +" dias, ou seja, "+ total +" horas.":"Você viajou por "+ dias +" dias e "+ horas+" horas, ou seja, "+ total +" horas.");
+		System.out.printf(horas<=0?"Você viajou por "+ dias +" dias, ou seja, "+ total +" horas.":"Você viajou por "+ dias +" dias e "+ horas+" horas, ou seja, "+ total +" horas.\n");
 		
 	}
 	
 	public static void AreaRetangulo(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Receber base e altura de um retângulo e mostrar a área.
 		//Scanner input = new Scanner(System.in);
 		double base,altura,area;
@@ -45,6 +57,7 @@ public class Library
 
 	public static void HorasMinutosSegundos(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		String horaS, minutoS,horarioString;
 		int horaInt,minutoInt,minutos,segundos;
@@ -78,6 +91,7 @@ public class Library
 	
 	public static void ContaDelivery(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 
 		double prato1=10.00,prato2=13.00,entrega=7.00;
@@ -92,18 +106,21 @@ public class Library
 		switch (option)
 		{
 		case 1:
+			clearConsoleWindows();
 			System.out.printf("Digite a quantidade do prato 1: ");
 			qtd=inputMain.nextInt();
 			pedido[contIndex]=prato1*qtd;
 			contIndex+=1;
 			break;
 		case 2:
+			clearConsoleWindows();
 			System.out.printf("Digite a quantidade do prato 2: ");
 			qtd=inputMain.nextInt();
 			pedido[contIndex]=prato2*qtd;
 			contIndex+=1;
 			break;
 		case 0:
+			clearConsoleWindows();
 			System.out.println("Finalizando compras");
 			break;
 		default:
@@ -135,6 +152,7 @@ public class Library
 	
 	public static void JurosAtraso(Scanner inputMain)
 	{
+		clearConsoleWindows();
 
 		//Scanner input = new Scanner (System.in);
 		
@@ -172,6 +190,7 @@ public class Library
 	
 	public static void DiaUtil(Scanner inputMain)
 	{
+		clearConsoleWindows();
 	
 		//Scanner input = new Scanner(System.in);
 		String semana[]= {"1- Domingo","2- Segunda","3- Terça","4- Quarta","5- Quinta",
@@ -199,6 +218,7 @@ public class Library
 		
 	public static void eleicao(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 	
 		String candidatos[]=new String[3];
@@ -243,6 +263,7 @@ public class Library
 	
 	public static void viagem()
 	{
+		clearConsoleWindows();
 		//Estado da estrada (liberada/bloqueada) baseado na temperatura.
 		
 		int selectorTemp, randomday;
@@ -275,6 +296,7 @@ public class Library
 	
 	public static void NumerosPares(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		
 		int contPar=0,contImpar=0;
@@ -299,23 +321,21 @@ public class Library
 	
 	
 	
-
 	
 	
 	
 	
 	
-	
-	
-
+	//=================SUB MENU =====================
 	public static void Basic(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
-		System.out.println("\n\nQual opção? \n0 - Sair\n1 - Horas viagem\n2 - Área Retângulo\n"
+		System.out.println("\nQual opção? \n0 - Menu\n1 - Horas viagem\n2 - Área Retângulo\n"
 				+ "3 - Converter hora em minutos/segundos\n4 - Pedido delivery");
 		option=inputMain.nextInt();
 		
@@ -345,15 +365,15 @@ public class Library
 		while(option!=0);
 	}
 	
-	
 	public static void Decision(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Juros diários\n2 - Dia útil"
+			System.out.println("\nQual opção? \n0 - Menu\n1 - Juros diários\n2 - Dia útil"
 					+ "\n3 - Eleição simples\n4 - Viagem (Temperatura)");
 			option=inputMain.nextInt();
 			
@@ -388,13 +408,14 @@ public class Library
 	
 	public static void Repetition(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair\n1 - Numeros pares");
+			System.out.println("\nQual opção? \n0 - Menu\n1 - Numeros pares");
 			option=inputMain.nextInt();
 			
 			switch (option)
@@ -425,12 +446,13 @@ public class Library
 	
 	public static void Math(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair");
+			System.out.println("\nQual opção? \n0 - Menu");
 			option=inputMain.nextInt();
 			
 			switch (option)
@@ -459,12 +481,13 @@ public class Library
 	}
 	public static void Vector(Scanner inputMain)
 	{
+		clearConsoleWindows();
 		//Scanner input = new Scanner(System.in);
 		int option;
 		
 		do
 		{
-			System.out.println("\n\nQual opção? \n0 - Sair");
+			System.out.println("\nQual opção? \n0 - Sair");
 			option=inputMain.nextInt();
 			
 			switch (option)
@@ -491,22 +514,18 @@ public class Library
 		
 		
 	}
-	
-	
-	
-	
-	
-	
 
-	//************************************
+
+	//***************MAIN MENU*********************
 	
 		
 	public static void MainMenu(Scanner inputMain)
 		{
+			
 			int option;
 			
 			do
-			{
+			{	clearConsoleWindows();
 				System.out.println("Bem vindo ao menu principal");
 				System.out.println("0- Sair\n1- Básico\n2- Decisão"
 						+ "\n3- Repetição\n4- Matemática\n5- Vetores");
@@ -540,9 +559,6 @@ public class Library
 			}
 			while(option!=0);
 		
-			
-			
-			
 		}
 	
 }
