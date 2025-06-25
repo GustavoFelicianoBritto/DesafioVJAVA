@@ -229,11 +229,11 @@ public class Library
 		{
 			System.out.printf("Digite o nome do %d candidato: ",i+1);
 			candidatos[i]=inputMain.next();
-			
+			inputMain.nextLine();
 			System.out.printf("Digite a quantidade total de votos em %s: ",candidatos[i]);
 			votos[i]=inputMain.nextInt();
 			System.out.println();
-
+			
 		}
 		
 		if(votos[0]>(votos[1]+votos[2]))
@@ -290,10 +290,7 @@ public class Library
 	
 	//======================================repetição
 
-	//======================================
-	
-	
-	
+		
 	public static void NumerosPares(Scanner inputMain)
 	{
 		clearConsoleWindows();
@@ -316,6 +313,7 @@ public class Library
 		
 		
 	}
+	
 	
 
 	
